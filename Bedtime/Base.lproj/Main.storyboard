@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,58 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bedtime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-5c-Ugh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udm-CH-QLy">
+                                <rect key="frame" x="36.5" y="176" width="247" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="mCr-wD-Hvb"/>
+                                    <constraint firstAttribute="height" constant="216" id="t99-fL-233"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="577130400.26573801">
+                                    <!--2019-04-16 6:00:00 PM +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ngm-ee-bQr"/>
+                                </connections>
+                            </datePicker>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8T-J3-54N">
+                                <rect key="frame" x="135.5" y="456" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onOffAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ysF-H5-VvK"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2EU-5c-Ugh" secondAttribute="bottom" id="1bJ-PO-2OC"/>
+                            <constraint firstItem="e8T-J3-54N" firstAttribute="top" secondItem="udm-CH-QLy" secondAttribute="bottom" constant="64" id="Awj-VO-udX"/>
+                            <constraint firstItem="2EU-5c-Ugh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BXH-Y6-aGt"/>
+                            <constraint firstItem="e8T-J3-54N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bvR-TZ-Ixl"/>
+                            <constraint firstItem="udm-CH-QLy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dKq-GK-PzG"/>
+                            <constraint firstItem="udm-CH-QLy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hGS-yS-TTv"/>
+                            <constraint firstItem="2EU-5c-Ugh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hbw-Bz-eJy"/>
+                            <constraint firstAttribute="trailing" secondItem="2EU-5c-Ugh" secondAttribute="trailing" id="w45-Mc-u2Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="udm-CH-QLy" id="3ql-01-7aj"/>
+                        <outlet property="onOffSwitch" destination="e8T-J3-54N" id="6VM-Rk-wcT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="126.7605633802817"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sky" width="320" height="568"/>
+    </resources>
 </document>

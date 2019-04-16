@@ -12,6 +12,7 @@
 		36F5E96822660E5E005C9B75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F5E96622660E5E005C9B75 /* Main.storyboard */; };
 		36F5E96A22660E60005C9B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F5E96922660E60005C9B75 /* Assets.xcassets */; };
 		36F5E96D22660E60005C9B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F5E96B22660E60005C9B75 /* LaunchScreen.storyboard */; };
+		36F5E9752266187F005C9B75 /* alarm-sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 36F5E9742266187F005C9B75 /* alarm-sound.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		36F5E96922660E60005C9B75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36F5E96C22660E60005C9B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36F5E96E22660E60005C9B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36F5E9742266187F005C9B75 /* alarm-sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alarm-sound.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,17 @@
 				36F5E96922660E60005C9B75 /* Assets.xcassets */,
 				36F5E96B22660E60005C9B75 /* LaunchScreen.storyboard */,
 				36F5E96E22660E60005C9B75 /* Info.plist */,
+				36F5E9762266189C005C9B75 /* Resources */,
 			);
 			path = Bedtime;
+			sourceTree = "<group>";
+		};
+		36F5E9762266189C005C9B75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36F5E9742266187F005C9B75 /* alarm-sound.m4a */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F5E9752266187F005C9B75 /* alarm-sound.m4a in Resources */,
 				36F5E96D22660E60005C9B75 /* LaunchScreen.storyboard in Resources */,
 				36F5E96A22660E60005C9B75 /* Assets.xcassets in Resources */,
 				36F5E96822660E5E005C9B75 /* Main.storyboard in Resources */,
@@ -285,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 639KEQWW6F;
 				INFOPLIST_FILE = Bedtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 639KEQWW6F;
 				INFOPLIST_FILE = Bedtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
