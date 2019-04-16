@@ -24,12 +24,11 @@ class ViewController: UIViewController {
 	var granted = false
 	let calendar = Calendar.current
 	var components = DateComponents()
-
+	let center = UNUserNotificationCenter.current()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let center = UNUserNotificationCenter.current()
 		let options: UNAuthorizationOptions = [.alert, .sound];
 		center.requestAuthorization(options: options) { (granted, error) in
 			self.granted = granted
@@ -61,7 +60,6 @@ class ViewController: UIViewController {
 
 	@IBAction func datePickerAction(_ sender: UIDatePicker) {
 		components = calendar.dateComponents([.hour, .minute], from: datePicker.date)
-		print("Time: \(components.description)")
 		setupNotification(on: onOffSwitch.isOn, components: components)
 	}
 
@@ -72,7 +70,7 @@ class ViewController: UIViewController {
 
 
 	func setupNotification(on: Bool, components: DateComponents) {
-		UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [ALARM_NOTIFICATION_ID])
+		center.removePendingNotificationRequests(withIdentifiers: [ALARM_NOTIFICATION_ID])
 		if (on) {
 			let content = UNMutableNotificationContent()
 			content.body = "It's bed time!"
@@ -81,7 +79,7 @@ class ViewController: UIViewController {
 
 			let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
 			let request = UNNotificationRequest(identifier: ALARM_NOTIFICATION_ID, content: content, trigger: trigger)
-			UNUserNotificationCenter.current().add(request) { (error) in
+			center.add(request) { (error) in
 				if let error = error { print(error) }
 			}
 		}
